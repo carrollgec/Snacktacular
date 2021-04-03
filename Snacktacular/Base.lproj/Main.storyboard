@@ -107,7 +107,7 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" id="XHM-el-lD8">
-                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="WgB-al-m99">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="WgB-al-m99">
                                 <rect key="frame" x="20" y="10.5" width="374" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="PrimaryColor"/>
@@ -276,6 +276,11 @@
                                 <action selector="cancelButtonPressed:" destination="bSz-63-zOn" id="O2C-4f-WRZ"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="STI-Jp-R1l">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="bSz-63-zOn" id="dax-6u-hxS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -362,7 +367,7 @@
         <image name="camera.fill" catalog="system" width="128" height="94"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <namedColor name="PrimaryColor">
-            <color red="0.93329685929999995" green="0.48154056070000001" blue="0.2783564925" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.93333333333333335" green="0.4823529411764706" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
