@@ -10,6 +10,7 @@
 		9018509526190CD900A35825 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9018509426190CD900A35825 /* Spot.swift */; };
 		9018509826191DE500A35825 /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9018509726191DE500A35825 /* UIViewController+alert.swift */; };
 		9018509B261922BB00A35825 /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9018509A261922BB00A35825 /* Spots.swift */; };
+		9018509E261971B200A35825 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9018509D261971B200A35825 /* APIKeys.swift */; };
 		9018DB532614C9550033DC1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9018DB522614C9550033DC1E /* AppDelegate.swift */; };
 		9018DB552614C9550033DC1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9018DB542614C9550033DC1E /* SceneDelegate.swift */; };
 		9018DB572614C9550033DC1E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9018DB562614C9550033DC1E /* LoginViewController.swift */; };
@@ -29,6 +30,7 @@
 		9018509426190CD900A35825 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		9018509726191DE500A35825 /* UIViewController+alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
 		9018509A261922BB00A35825 /* Spots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots.swift; sourceTree = "<group>"; };
+		9018509D261971B200A35825 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		9018DB4F2614C9550033DC1E /* Snacktacular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snacktacular.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9018DB522614C9550033DC1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9018DB542614C9550033DC1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				90A5C5E02614F46900AC5A7C /* SpotTableViewCell.swift */,
 				90A5C5E32614F82100AC5A7C /* SpotDetailViewController.swift */,
 				9018509726191DE500A35825 /* UIViewController+alert.swift */,
+				9018509D261971B200A35825 /* APIKeys.swift */,
 				9018DB582614C9550033DC1E /* Main.storyboard */,
 				9018DB5B2614C9580033DC1E /* Assets.xcassets */,
 				9018DB5D2614C9580033DC1E /* LaunchScreen.storyboard */,
@@ -251,6 +254,7 @@
 				90A5C5E42614F82100AC5A7C /* SpotDetailViewController.swift in Sources */,
 				9018509B261922BB00A35825 /* Spots.swift in Sources */,
 				90A5C5E12614F46900AC5A7C /* SpotTableViewCell.swift in Sources */,
+				9018509E261971B200A35825 /* APIKeys.swift in Sources */,
 				9018509526190CD900A35825 /* Spot.swift in Sources */,
 				9018DB552614C9550033DC1E /* SceneDelegate.swift in Sources */,
 				9018509826191DE500A35825 /* UIViewController+alert.swift in Sources */,

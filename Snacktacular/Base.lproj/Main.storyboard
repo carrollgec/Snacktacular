@@ -268,7 +268,11 @@
                         </constraints>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="Lookup Place" id="GXL-wF-f7f"/>
+                        <barButtonItem title="Lookup Place" id="GXL-wF-f7f">
+                            <connections>
+                                <action selector="lookupButtonPressed:" destination="bSz-63-zOn" id="MeS-YO-o71"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="viw-lC-IRx">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="JMT-PJ-1fZ">
