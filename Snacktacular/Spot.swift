@@ -7,40 +7,62 @@
 
 import Foundation
 import Firebase
+import MapKit
 
-class Spot {
+class Spot: NSObject, MKAnnotation {
     
     var name: String
     var address: String
+    var coordinate: CLLocationCoordinate2D
     var averageRating: Double
     var numberOfReviews: Int
     var postingUserID: String
     var documentID: String
     
     var dictionary: [String: Any] {
-        return ["name": name, "address": address, "averageRating": averageRating, "numberOfReviews": numberOfReviews, "postingUserID": postingUserID]
+        return ["name": name, "address": address, "latitude": latitude, "longitude": longitude, "averageRating": averageRating, "numberOfReviews": numberOfReviews, "postingUserID": postingUserID]
     }
     
-    init(name: String, address: String, averageRating: Double, numberOfReviews: Int, postingUserID: String, documentID: String) {
+    var latitude: CLLocationDegrees {
+        return coordinate.latitude
+    }
+    
+    var longitude: CLLocationDegrees {
+        return coordinate.longitude
+    }
+    
+    var title: String? {
+        return name
+    }
+    
+    var subtitle: String? {
+        return address
+    }
+    
+    init(name: String, address: String, coordinate: CLLocationCoordinate2D, averageRating: Double, numberOfReviews: Int, postingUserID: String, documentID: String) {
         self.name = name
         self.address = address
+        self.coordinate = coordinate
         self.averageRating = averageRating
         self.numberOfReviews = numberOfReviews
         self.postingUserID = postingUserID
         self.documentID = documentID
     }
     
-    convenience init() {
-        self.init(name: "", address: "", averageRating: 0.0, numberOfReviews: 0, postingUserID: "", documentID: "")
+    convenience override init() {
+        self.init(name: "", address: "", coordinate: CLLocationCoordinate2D(), averageRating: 0.0, numberOfReviews: 0, postingUserID: "", documentID: "")
     }
     
     convenience init(dictionary: [String: Any]) {
         let name = dictionary["name"] as! String? ?? ""
         let address = dictionary["address"] as! String? ?? ""
+        let latitude = dictionary["latitude"] as! Double? ?? 0.0
+        let longitude = dictionary["longitude"] as! Double? ?? 0.0
+        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let averageRating = dictionary["averageRating"] as! Double? ?? 0.0
         let numberOfReviews = dictionary["NumberOfReviews"] as! Int? ?? 0
         let postingUserID = dictionary["postingUserID"] as! String? ?? ""
-        self.init(name: name, address: address, averageRating: averageRating, numberOfReviews: numberOfReviews, postingUserID: postingUserID, documentID: "")
+        self.init(name: name, address: address, coordinate: coordinate, averageRating: averageRating, numberOfReviews: numberOfReviews, postingUserID: postingUserID, documentID: "")
     }
     
     func saveData(completion: @escaping (Bool) -> ()) {

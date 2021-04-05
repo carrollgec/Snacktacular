@@ -235,19 +235,25 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="  Photo" image="camera.fill" catalog="system"/>
                                     </button>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OwH-Ch-yap">
+                                        <rect key="frame" x="0.0" y="62" width="414" height="180"/>
+                                    </mapView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Sxs-Om-3dZ" secondAttribute="trailing" id="3Im-kd-x8r"/>
                                     <constraint firstItem="Sxs-Om-3dZ" firstAttribute="top" secondItem="Dgz-XZ-YBL" secondAttribute="top" constant="242" id="95g-qP-GBE"/>
                                     <constraint firstAttribute="height" constant="380" id="Dbi-td-6YX"/>
+                                    <constraint firstItem="OwH-Ch-yap" firstAttribute="top" secondItem="dcH-gC-qBV" secondAttribute="bottom" constant="2" id="Djh-bV-QXk"/>
                                     <constraint firstItem="mYe-kc-e9O" firstAttribute="leading" secondItem="Dgz-XZ-YBL" secondAttribute="leading" constant="8" id="FOI-74-WKA"/>
                                     <constraint firstItem="2WJ-BT-e1c" firstAttribute="leading" secondItem="ZPQ-4K-MbL" secondAttribute="trailing" constant="8" id="FSs-wB-th9"/>
+                                    <constraint firstItem="OwH-Ch-yap" firstAttribute="leading" secondItem="Dgz-XZ-YBL" secondAttribute="leading" id="GJx-zM-oMn"/>
                                     <constraint firstItem="Sxs-Om-3dZ" firstAttribute="leading" secondItem="Dgz-XZ-YBL" secondAttribute="leading" id="PM6-hj-xYW"/>
                                     <constraint firstItem="2WJ-BT-e1c" firstAttribute="top" secondItem="Sxs-Om-3dZ" secondAttribute="bottom" constant="4" id="QFq-YT-hdG"/>
                                     <constraint firstItem="VBl-jk-Sdw" firstAttribute="leading" secondItem="Dgz-XZ-YBL" secondAttribute="leading" constant="8" id="RSm-C0-xf2"/>
                                     <constraint firstItem="Dt0-M6-dZV" firstAttribute="leading" secondItem="VBl-jk-Sdw" secondAttribute="trailing" id="XSj-qI-9YQ"/>
                                     <constraint firstItem="dcH-gC-qBV" firstAttribute="leading" secondItem="Dgz-XZ-YBL" secondAttribute="leading" constant="8" id="Xi2-Wz-oup"/>
+                                    <constraint firstAttribute="trailing" secondItem="OwH-Ch-yap" secondAttribute="trailing" id="caP-8K-hOP"/>
                                     <constraint firstAttribute="trailing" secondItem="dcH-gC-qBV" secondAttribute="trailing" constant="8" id="dDt-xE-hZ0"/>
                                     <constraint firstAttribute="trailing" secondItem="mYe-kc-e9O" secondAttribute="trailing" constant="8" id="fdO-O7-dct"/>
                                     <constraint firstItem="VBl-jk-Sdw" firstAttribute="top" secondItem="Sxs-Om-3dZ" secondAttribute="bottom" constant="8" id="hV9-hL-iYZ"/>
@@ -256,6 +262,7 @@
                                     <constraint firstAttribute="trailing" secondItem="2WJ-BT-e1c" secondAttribute="trailing" constant="8" id="n62-WC-8aJ"/>
                                     <constraint firstItem="dcH-gC-qBV" firstAttribute="top" secondItem="mYe-kc-e9O" secondAttribute="bottom" constant="2" id="n9j-cB-n6k"/>
                                     <constraint firstItem="Dt0-M6-dZV" firstAttribute="top" secondItem="Sxs-Om-3dZ" secondAttribute="bottom" constant="6" id="ou3-wx-svp"/>
+                                    <constraint firstItem="Sxs-Om-3dZ" firstAttribute="top" secondItem="OwH-Ch-yap" secondAttribute="bottom" id="tfE-R6-hpd"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -289,6 +296,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addressTextField" destination="dcH-gC-qBV" id="ejb-MW-alv"/>
+                        <outlet property="mapView" destination="OwH-Ch-yap" id="wTA-zc-GXw"/>
                         <outlet property="nameTextField" destination="mYe-kc-e9O" id="9KE-bm-cFE"/>
                         <outlet property="ratingLabel" destination="Dt0-M6-dZV" id="tDI-oD-amB"/>
                     </connections>

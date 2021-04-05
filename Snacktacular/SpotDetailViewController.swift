@@ -7,14 +7,17 @@
 
 import UIKit
 import GooglePlaces
+import MapKit
 
 class SpotDetailViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
     
     var spot: Spot!
+    let regionDistance: CLLocationDegrees = 750.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +25,25 @@ class SpotDetailViewController: UIViewController {
         if spot == nil {
             spot = Spot()
         }
+        setupMapView()
         updateUserInterface()
+    }
+    
+    func setupMapView() {
+        let region = MKCoordinateRegion(center: spot.coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        mapView.setRegion(region, animated: true)
     }
     
     func updateUserInterface() {
         nameTextField.text = spot.name
         addressTextField.text = spot.address
+        updateMap()
+    }
+    
+    func updateMap() {
+        mapView.removeAnnotations(mapView.annotations)
+        mapView.addAnnotation(spot)
+        mapView.setCenter(spot.coordinate, animated: true)
     }
     
     func updateFromInterface() {
@@ -70,12 +86,9 @@ extension SpotDetailViewController: GMSAutocompleteViewControllerDelegate {
 
   // Handle the user's selection.
   func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-    print("Place name: \(place.name)")
-    print("Place ID: \(place.placeID)")
-    print("Place attributions: \(place.attributions)")
     spot.name = place.name ?? "Unknown Place"
     spot.address = place.formattedAddress ?? "Unknown Address"
-    print("Coordinates = \(place.coordinate)")
+    spot.coordinate = place.coordinate
     updateUserInterface()
     dismiss(animated: true, completion: nil)
   }
