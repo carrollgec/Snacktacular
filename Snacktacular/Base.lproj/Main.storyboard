@@ -276,7 +276,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReviewCell" id="e80-rk-nN4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReviewCell" id="e80-rk-nN4" customClass="SpotReviewTableViewCell" customModule="Snacktacular" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="408" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e80-rk-nN4" id="dbO-cw-R4n">
@@ -363,6 +363,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="reviewTextLabel" destination="I2J-m6-chR" id="fOa-NO-N7h"/>
+                                            <outlet property="reviewTitleLabel" destination="fWh-Fw-nan" id="C1l-RV-LgO"/>
                                             <segue destination="hqM-4p-DJ8" kind="show" identifier="ShowReview" id="sb7-hw-rh5"/>
                                         </connections>
                                     </tableViewCell>
@@ -831,7 +833,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4de-IC-3eD"/>
+        <segue reference="sb7-hw-rh5"/>
         <segue reference="oWg-TC-cfx"/>
     </inferredMetricsTieBreakers>
     <resources>
