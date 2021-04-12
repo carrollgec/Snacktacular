@@ -18,6 +18,8 @@
 		9018DB5C2614C9580033DC1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9018DB5B2614C9580033DC1E /* Assets.xcassets */; };
 		9018DB5F2614C9580033DC1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9018DB5D2614C9580033DC1E /* LaunchScreen.storyboard */; };
 		9028A5402624C0B70020B1EC /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9028A53F2624C0B70020B1EC /* ReviewTableViewController.swift */; };
+		9028A5432624CAD60020B1EC /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9028A5422624CAD60020B1EC /* Review.swift */; };
+		9028A5462624CDB20020B1EC /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9028A5452624CDB20020B1EC /* Reviews.swift */; };
 		90A5C5DA2614E3FA00AC5A7C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90A5C5D92614E3FA00AC5A7C /* GoogleService-Info.plist */; };
 		90A5C5DE2614F25800AC5A7C /* SpotListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5C5DD2614F25700AC5A7C /* SpotListViewController.swift */; };
 		90A5C5E12614F46900AC5A7C /* SpotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5C5E02614F46900AC5A7C /* SpotTableViewCell.swift */; };
@@ -41,6 +43,8 @@
 		9018DB5E2614C9580033DC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9018DB602614C9580033DC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9028A53F2624C0B70020B1EC /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
+		9028A5422624CAD60020B1EC /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		9028A5452624CDB20020B1EC /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		90A5C5D92614E3FA00AC5A7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		90A5C5DD2614F25700AC5A7C /* SpotListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotListViewController.swift; sourceTree = "<group>"; };
 		90A5C5E02614F46900AC5A7C /* SpotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotTableViewCell.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 				9018DB542614C9550033DC1E /* SceneDelegate.swift */,
 				9018509426190CD900A35825 /* Spot.swift */,
 				9018509A261922BB00A35825 /* Spots.swift */,
+				9028A5422624CAD60020B1EC /* Review.swift */,
+				9028A5452624CDB20020B1EC /* Reviews.swift */,
 				9018DB562614C9550033DC1E /* LoginViewController.swift */,
 				90A5C5DD2614F25700AC5A7C /* SpotListViewController.swift */,
 				90A5C5E02614F46900AC5A7C /* SpotTableViewCell.swift */,
@@ -251,11 +257,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9028A5462624CDB20020B1EC /* Reviews.swift in Sources */,
 				90A5C5DE2614F25800AC5A7C /* SpotListViewController.swift in Sources */,
 				9018DB572614C9550033DC1E /* LoginViewController.swift in Sources */,
 				9018DB532614C9550033DC1E /* AppDelegate.swift in Sources */,
 				90A5C5E42614F82100AC5A7C /* SpotDetailViewController.swift in Sources */,
 				9028A5402624C0B70020B1EC /* ReviewTableViewController.swift in Sources */,
+				9028A5432624CAD60020B1EC /* Review.swift in Sources */,
 				9018509B261922BB00A35825 /* Spots.swift in Sources */,
 				90A5C5E12614F46900AC5A7C /* SpotTableViewCell.swift in Sources */,
 				9018509E261971B200A35825 /* APIKeys.swift in Sources */,

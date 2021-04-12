@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Snacktacular" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -34,7 +34,7 @@
             <objects>
                 <viewController id="PDN-iU-kjw" customClass="SpotListViewController" customModule="Snacktacular" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5d1-jQ-kEu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tLb-O4-sh1">
@@ -409,7 +409,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O2r-rr-jaY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3711.594202898551" y="90.401785714285708"/>
+            <point key="canvasLocation" x="3941" y="78"/>
         </scene>
         <!--Review Table View Controller-->
         <scene sceneID="6Rd-fQ-xIT">
@@ -738,7 +738,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2BV-TY-DVk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5444.9275362318849" y="107.8125"/>
+            <point key="canvasLocation" x="5919" y="78"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fu7-hE-lhu">
@@ -804,7 +804,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNd-tx-Lne" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2751" y="-486"/>
+            <point key="canvasLocation" x="2949" y="-465"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="faz-vL-MM2">
@@ -827,12 +827,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSh-np-MWl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4519" y="-591"/>
+            <point key="canvasLocation" x="4983" y="-465"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sb7-hw-rh5"/>
-        <segue reference="ZBF-7H-fSl"/>
+        <segue reference="4de-IC-3eD"/>
+        <segue reference="oWg-TC-cfx"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
