@@ -21,6 +21,8 @@
 		9028A5432624CAD60020B1EC /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9028A5422624CAD60020B1EC /* Review.swift */; };
 		9028A5462624CDB20020B1EC /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9028A5452624CDB20020B1EC /* Reviews.swift */; };
 		9028A5492624D6F50020B1EC /* SpotReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9028A5482624D6F50020B1EC /* SpotReviewTableViewCell.swift */; };
+		90A314712635D2E20045395B /* UIView + addBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A314702635D2E20045395B /* UIView + addBorder.swift */; };
+		90A314742635D3AE0045395B /* UIBarButtonItem+hide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A314732635D3AE0045395B /* UIBarButtonItem+hide.swift */; };
 		90A5C5DA2614E3FA00AC5A7C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90A5C5D92614E3FA00AC5A7C /* GoogleService-Info.plist */; };
 		90A5C5DE2614F25800AC5A7C /* SpotListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5C5DD2614F25700AC5A7C /* SpotListViewController.swift */; };
 		90A5C5E12614F46900AC5A7C /* SpotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5C5E02614F46900AC5A7C /* SpotTableViewCell.swift */; };
@@ -47,6 +49,8 @@
 		9028A5422624CAD60020B1EC /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		9028A5452624CDB20020B1EC /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		9028A5482624D6F50020B1EC /* SpotReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotReviewTableViewCell.swift; sourceTree = "<group>"; };
+		90A314702635D2E20045395B /* UIView + addBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + addBorder.swift"; sourceTree = "<group>"; };
+		90A314732635D3AE0045395B /* UIBarButtonItem+hide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+hide.swift"; sourceTree = "<group>"; };
 		90A5C5D92614E3FA00AC5A7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		90A5C5DD2614F25700AC5A7C /* SpotListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotListViewController.swift; sourceTree = "<group>"; };
 		90A5C5E02614F46900AC5A7C /* SpotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotTableViewCell.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 				9028A5482624D6F50020B1EC /* SpotReviewTableViewCell.swift */,
 				9028A53F2624C0B70020B1EC /* ReviewTableViewController.swift */,
 				9018509726191DE500A35825 /* UIViewController+alert.swift */,
+				90A314702635D2E20045395B /* UIView + addBorder.swift */,
+				90A314732635D3AE0045395B /* UIBarButtonItem+hide.swift */,
 				9018509D261971B200A35825 /* APIKeys.swift */,
 				9018DB582614C9550033DC1E /* Main.storyboard */,
 				9018DB5B2614C9580033DC1E /* Assets.xcassets */,
@@ -263,10 +269,12 @@
 				9028A5462624CDB20020B1EC /* Reviews.swift in Sources */,
 				90A5C5DE2614F25800AC5A7C /* SpotListViewController.swift in Sources */,
 				9018DB572614C9550033DC1E /* LoginViewController.swift in Sources */,
+				90A314712635D2E20045395B /* UIView + addBorder.swift in Sources */,
 				9018DB532614C9550033DC1E /* AppDelegate.swift in Sources */,
 				90A5C5E42614F82100AC5A7C /* SpotDetailViewController.swift in Sources */,
 				9028A5402624C0B70020B1EC /* ReviewTableViewController.swift in Sources */,
 				9028A5432624CAD60020B1EC /* Review.swift in Sources */,
+				90A314742635D3AE0045395B /* UIBarButtonItem+hide.swift in Sources */,
 				9018509B261922BB00A35825 /* Spots.swift in Sources */,
 				90A5C5E12614F46900AC5A7C /* SpotTableViewCell.swift in Sources */,
 				9028A5492624D6F50020B1EC /* SpotReviewTableViewCell.swift in Sources */,

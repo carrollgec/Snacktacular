@@ -107,7 +107,7 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" id="XHM-el-lD8">
-                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="WgB-al-m99">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="WgB-al-m99">
                                 <rect key="frame" x="20" y="10.5" width="374" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="PrimaryColor"/>
@@ -164,11 +164,15 @@
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Restaurant Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mYe-kc-e9O">
                                             <rect key="frame" x="8" y="8" width="398" height="33"/>
+                                            <color key="backgroundColor" name="UIElementBackground"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="33" id="YOM-Jd-9cA"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="24"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="nameFieldChanged:" destination="bSz-63-zOn" eventType="editingChanged" id="028-lu-o6B"/>
+                                            </connections>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="address" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dcH-gC-qBV">
                                             <rect key="frame" x="8" y="43" width="398" height="17"/>
@@ -392,13 +396,13 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" id="viw-lC-IRx">
+                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="viw-lC-IRx">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="JMT-PJ-1fZ">
                             <connections>
                                 <action selector="cancelButtonPressed:" destination="bSz-63-zOn" id="O2C-4f-WRZ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="STI-Jp-R1l">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="STI-Jp-R1l">
                             <connections>
                                 <action selector="saveButtonPressed:" destination="bSz-63-zOn" id="dax-6u-hxS"/>
                             </connections>
@@ -407,9 +411,11 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addressTextField" destination="dcH-gC-qBV" id="ejb-MW-alv"/>
+                        <outlet property="cancelBarButton" destination="JMT-PJ-1fZ" id="7sp-Es-IXj"/>
                         <outlet property="mapView" destination="OwH-Ch-yap" id="wTA-zc-GXw"/>
                         <outlet property="nameTextField" destination="mYe-kc-e9O" id="9KE-bm-cFE"/>
                         <outlet property="ratingLabel" destination="Dt0-M6-dZV" id="tDI-oD-amB"/>
+                        <outlet property="saveBarButton" destination="STI-Jp-R1l" id="0ns-4n-kOO"/>
                         <outlet property="tableView" destination="ZEm-z7-aJu" id="3Rl-7O-ZlU"/>
                         <segue destination="8p8-nr-2yx" kind="presentation" identifier="AddReview" modalPresentationStyle="fullScreen" id="LnD-ya-Jh8"/>
                     </connections>
@@ -501,7 +507,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="c7h-eX-cWf">
                                                     <rect key="frame" x="103" y="29" width="208" height="40"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fts-hA-na3">
+                                                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fts-hA-na3">
                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                             <color key="backgroundColor" name="UIElementBackground"/>
                                                             <constraints>
@@ -516,7 +522,7 @@
                                                                 <action selector="starButtonPressed:" destination="hqM-4p-DJ8" eventType="touchUpInside" id="Nxg-d6-ylU"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpY-LB-KcO">
+                                                        <button opaque="NO" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpY-LB-KcO">
                                                             <rect key="frame" x="42" y="0.0" width="40" height="40"/>
                                                             <color key="backgroundColor" name="UIElementBackground"/>
                                                             <constraints>
@@ -531,7 +537,7 @@
                                                                 <action selector="starButtonPressed:" destination="hqM-4p-DJ8" eventType="touchUpInside" id="Dad-Pl-WI2"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tu8-Cp-ycw">
+                                                        <button opaque="NO" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tu8-Cp-ycw">
                                                             <rect key="frame" x="84" y="0.0" width="40" height="40"/>
                                                             <color key="backgroundColor" name="UIElementBackground"/>
                                                             <constraints>
@@ -546,7 +552,7 @@
                                                                 <action selector="starButtonPressed:" destination="hqM-4p-DJ8" eventType="touchUpInside" id="KjD-Pc-NLG"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" tag="3" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSB-ZL-uBL">
+                                                        <button opaque="NO" tag="3" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSB-ZL-uBL">
                                                             <rect key="frame" x="126" y="0.0" width="40" height="40"/>
                                                             <color key="backgroundColor" name="UIElementBackground"/>
                                                             <constraints>
@@ -561,7 +567,7 @@
                                                                 <action selector="starButtonPressed:" destination="hqM-4p-DJ8" eventType="touchUpInside" id="yL9-Sy-lP6"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" tag="4" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gte-bK-mr8">
+                                                        <button opaque="NO" tag="4" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gte-bK-mr8">
                                                             <rect key="frame" x="168" y="0.0" width="40" height="40"/>
                                                             <color key="backgroundColor" name="UIElementBackground"/>
                                                             <constraints>
@@ -606,7 +612,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U75-gJ-06v">
-                                                    <rect key="frame" x="12" y="12" width="82" height="24"/>
+                                                    <rect key="frame" x="12" y="10" width="82" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="hnQ-b2-9Bm"/>
                                                         <constraint firstAttribute="width" constant="82" id="ozZ-cN-U55"/>
@@ -616,7 +622,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title of Review" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bji-nE-JCh">
-                                                    <rect key="frame" x="97" y="5" width="309" height="34"/>
+                                                    <rect key="frame" x="104" y="5" width="302" height="34"/>
                                                     <color key="backgroundColor" name="UIElementBackground"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="3C6-Yu-4zI"/>
@@ -633,8 +639,8 @@
                                                 <constraint firstItem="U75-gJ-06v" firstAttribute="leading" secondItem="DVl-LI-6nb" secondAttribute="leading" constant="12" id="GPh-7B-uxJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="bji-nE-JCh" secondAttribute="trailing" constant="8" id="TuE-sb-Rho"/>
                                                 <constraint firstItem="bji-nE-JCh" firstAttribute="top" secondItem="DVl-LI-6nb" secondAttribute="top" constant="5" id="Xh6-nd-COh"/>
-                                                <constraint firstItem="bji-nE-JCh" firstAttribute="leading" secondItem="U75-gJ-06v" secondAttribute="trailing" constant="3" id="dYN-5B-IDn"/>
-                                                <constraint firstItem="U75-gJ-06v" firstAttribute="top" secondItem="DVl-LI-6nb" secondAttribute="top" constant="12" id="fse-cI-6hZ"/>
+                                                <constraint firstItem="bji-nE-JCh" firstAttribute="leading" secondItem="U75-gJ-06v" secondAttribute="trailing" constant="10" id="dYN-5B-IDn"/>
+                                                <constraint firstItem="U75-gJ-06v" firstAttribute="top" secondItem="DVl-LI-6nb" secondAttribute="top" constant="10" id="fse-cI-6hZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -670,13 +676,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Amazing Review Goes Here!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sE8-NV-nLX">
-                                                    <rect key="frame" x="8" y="40" width="398" height="240"/>
+                                                    <rect key="frame" x="8" y="40" width="398" height="230"/>
                                                     <color key="backgroundColor" name="UIElementBackground"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="240" id="rgt-Hx-riG"/>
-                                                    </constraints>
                                                     <color key="textColor" systemColor="labelColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
@@ -686,6 +689,7 @@
                                                 <constraint firstItem="sE8-NV-nLX" firstAttribute="leading" secondItem="mWo-ZH-lj2" secondAttribute="leading" constant="8" id="YiR-Ul-aR9"/>
                                                 <constraint firstItem="u7K-pu-a4e" firstAttribute="leading" secondItem="mWo-ZH-lj2" secondAttribute="leading" constant="8" id="ctt-JF-MDp"/>
                                                 <constraint firstItem="u7K-pu-a4e" firstAttribute="top" secondItem="mWo-ZH-lj2" secondAttribute="top" constant="12" id="dB0-vn-1zV"/>
+                                                <constraint firstAttribute="bottom" secondItem="sE8-NV-nLX" secondAttribute="bottom" constant="8" id="dMH-pf-es2"/>
                                                 <constraint firstItem="sE8-NV-nLX" firstAttribute="top" secondItem="OEy-ug-49G" secondAttribute="bottom" constant="3" id="izt-qp-Cvc"/>
                                                 <constraint firstAttribute="trailing" secondItem="sE8-NV-nLX" secondAttribute="trailing" constant="8" id="k76-jg-gc1"/>
                                             </constraints>
@@ -738,7 +742,8 @@
                                 <action selector="cancelButtonPressed:" destination="hqM-4p-DJ8" id="NUJ-mG-07b"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="6FZ-Hs-oPp">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="6FZ-Hs-oPp">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="saveButtonPressed:" destination="hqM-4p-DJ8" id="I60-sj-xz1"/>
                             </connections>
@@ -859,7 +864,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="sb7-hw-rh5"/>
-        <segue reference="oWg-TC-cfx"/>
+        <segue reference="ZBF-7H-fSl"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
@@ -869,7 +874,7 @@
             <color red="0.93333333333333335" green="0.4823529411764706" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="UIElementBackground">
-            <color red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.92100000381469727" green="0.92100000381469727" blue="0.92100000381469727" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
