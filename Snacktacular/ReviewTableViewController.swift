@@ -33,6 +33,7 @@ class ReviewTableViewController: UITableViewController {
     
     var review: Review!
     var spot: Spot!
+    var photo: Photo!
     var rating = 0 {
         didSet {
             for starButton in starButtonCollection {
