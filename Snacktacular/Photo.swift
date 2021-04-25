@@ -45,7 +45,53 @@ class Photo {
         let timeIntervalDate = dictionary["date"] as! TimeInterval? ?? TimeInterval()
         let date = Date(timeIntervalSince1970: timeIntervalDate)
         let photoURL = dictionary["photoURL"] as! String? ?? ""
-        self.init(image: UIImage(), description: description, photoUserID: photoUserID, photoUserEmail: photoUserEmail, date: date, photoURL: photoURL, documentID: "")    }
+        self.init(image: UIImage(), description: description, photoUserID: photoUserID, photoUserEmail: photoUserEmail, date: date, photoURL: photoURL, documentID: "")
+    }
     
-    
+    func saveData(spot: Spot, completion: @escaping (Bool) -> ()) {
+        let db = Firestore.firestore()
+        let storage = Storage.storage()
+        // convert photo.image to data type to be saved in firebase storage
+        guard let photoData = self.image.jpegData(compressionQuality: 0.5) else {
+            print("ERROR: could not convert photo.image to Data.")
+            return
+        }
+        // create meta data to be able to see image in firebase storage console
+        let uploadMetaData = StorageMetadata()
+        uploadMetaData.contentType = "image/jpeg"
+        // create filename if necessary
+        if documentID == "" {
+            documentID = UUID().uuidString
+        }
+        // create storage reference to upload image file to spot's folder
+        let storageRef = storage.reference().child(spot.documentID).child(documentID)
+        // create upload task
+        let uploadTask = storageRef.putData(photoData, metadata: uploadMetaData) { (metadata, error) in
+            if let error = error {
+                print("ERROR: upload for ref \(uploadMetaData) failed. \(error.localizedDescription)")
+            }
+        }
+        // add observers
+        uploadTask.observe(.success) { (snapshot) in
+            print("Upload to firebase storage was successful.")
+            //TODO: update with photourl for smoother image loading
+            let dataToSave: [String: Any] = self.dictionary
+            let ref = db.collection("spots").document(spot.documentID).collection("photos").document(self.documentID)
+            ref.setData(dataToSave) { (error) in
+                guard error == nil else {
+                    print("ERROR: updating document \(error!.localizedDescription)")
+                    return completion(false)
+                }
+                print("Updated document: \(self.documentID) in spot: \(spot.documentID)")
+                completion(true)
+            }
+        }
+        
+        uploadTask.observe(.failure) { (snapshot) in
+            if let error = snapshot.error {
+                print("ERROR: upload task for file \(self.documentID) failed, in spot \(spot.documentID) with error \(error.localizedDescription).")
+            }
+            completion(false)
+        }
+    }
 }
