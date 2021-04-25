@@ -195,13 +195,16 @@
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gS1-su-Qed">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="gS1-su-Qed">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QNN-n5-rZj">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </collectionViewCellContentView>
+                                                    <connections>
+                                                        <segue destination="aWU-Fx-Iil" kind="show" identifier="ShowPhoto" id="Kqw-nw-JPD"/>
+                                                    </connections>
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
@@ -248,6 +251,9 @@
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="  Photo" image="camera.fill" catalog="system"/>
+                                            <connections>
+                                                <action selector="photoButtonPressed:" destination="bSz-63-zOn" eventType="touchUpInside" id="BMV-mD-0vU"/>
+                                            </connections>
                                         </button>
                                         <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OwH-Ch-yap">
                                             <rect key="frame" x="0.0" y="62" width="414" height="180"/>
@@ -418,11 +424,53 @@
                         <outlet property="saveBarButton" destination="STI-Jp-R1l" id="0ns-4n-kOO"/>
                         <outlet property="tableView" destination="ZEm-z7-aJu" id="3Rl-7O-ZlU"/>
                         <segue destination="8p8-nr-2yx" kind="presentation" identifier="AddReview" modalPresentationStyle="fullScreen" id="LnD-ya-Jh8"/>
+                        <segue destination="XF3-JY-WvH" kind="presentation" identifier="AddPhoto" modalPresentationStyle="fullScreen" id="G2m-J6-iZi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O2r-rr-jaY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3941" y="78"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="dpJ-gF-sAq">
+            <objects>
+                <viewController id="aWU-Fx-Iil" customClass="PhotoViewController" customModule="Snacktacular" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="meu-cz-Lut">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="uIv-xx-J2x"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="bfU-ds-SU2"/>
+                        <barButtonItem systemItem="trash" id="Out-Sb-MjN">
+                            <connections>
+                                <action selector="deleteButtonPressed:" destination="aWU-Fx-Iil" id="RmB-KV-07H"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="R7K-6a-3mW">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="KP6-bg-Vm5">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="aWU-Fx-Iil" id="0OX-Q0-Lsa"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="7XZ-x4-h9f">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="aWU-Fx-Iil" id="ecs-Mb-SNW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <connections>
+                        <outlet property="cancelBarButton" destination="KP6-bg-Vm5" id="C6E-UB-aus"/>
+                        <outlet property="deleteBarButton" destination="Out-Sb-MjN" id="t1V-jt-DHZ"/>
+                        <outlet property="saveBarButton" destination="7XZ-x4-h9f" id="mtK-dV-33b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lel-lp-gYm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5919" y="763"/>
         </scene>
         <!--Review Table View Controller-->
         <scene sceneID="6Rd-fQ-xIT">
@@ -861,9 +909,36 @@
             </objects>
             <point key="canvasLocation" x="4983" y="-465"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SGC-Py-UN5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XF3-JY-WvH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ba5-av-wbe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" name="PrimaryColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aWU-Fx-Iil" kind="relationship" relationship="rootViewController" id="ZLh-VE-Ff9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dNN-Sp-XRl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4983" y="893"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="sb7-hw-rh5"/>
+        <segue reference="Kqw-nw-JPD"/>
         <segue reference="ZBF-7H-fSl"/>
     </inferredMetricsTieBreakers>
     <resources>
