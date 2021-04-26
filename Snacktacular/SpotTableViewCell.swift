@@ -18,7 +18,8 @@ class SpotTableViewCell: UITableViewCell {
     var spot: Spot! {
         didSet {
             nameLabel.text = spot.name
-            ratingLabel.text = "Avg. Rating: \(spot.averageRating)"
+            let roundedAvg = ((spot.averageRating * 10).rounded()) / 10
+            ratingLabel.text = "Avg. Rating: \(roundedAvg)"
             guard let currentLocation = currentLocation else {
                 distanceLabel.text = "Distance: -.-"
                 return
