@@ -74,16 +74,26 @@ class Photo {
         // add observers
         uploadTask.observe(.success) { (snapshot) in
             print("Upload to firebase storage was successful.")
-            //TODO: update with photourl for smoother image loading
-            let dataToSave: [String: Any] = self.dictionary
-            let ref = db.collection("spots").document(spot.documentID).collection("photos").document(self.documentID)
-            ref.setData(dataToSave) { (error) in
+            storageRef.downloadURL { (url, error) in
                 guard error == nil else {
-                    print("ERROR: updating document \(error!.localizedDescription)")
+                    print("ERROR: couldn't create a downloadURL \(error!.localizedDescription)")
+                   return completion(false)
+                }
+                guard let url = url else {
+                    print("ERROR: url was nil and this should not have happened \(error!.localizedDescription)")
                     return completion(false)
                 }
-                print("Updated document: \(self.documentID) in spot: \(spot.documentID)")
-                completion(true)
+                self.photoURL = "\(url)"
+                let dataToSave: [String: Any] = self.dictionary
+                let ref = db.collection("spots").document(spot.documentID).collection("photos").document(self.documentID)
+                ref.setData(dataToSave) { (error) in
+                    guard error == nil else {
+                        print("ERROR: updating document \(error!.localizedDescription)")
+                        return completion(false)
+                    }
+                    print("Updated document: \(self.documentID) in spot: \(spot.documentID)")
+                    completion(true)
+                }
             }
         }
         
