@@ -17,6 +17,7 @@
 		9018DB5A2614C9550033DC1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9018DB582614C9550033DC1E /* Main.storyboard */; };
 		9018DB5C2614C9580033DC1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9018DB5B2614C9580033DC1E /* Assets.xcassets */; };
 		9018DB5F2614C9580033DC1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9018DB5D2614C9580033DC1E /* LaunchScreen.storyboard */; };
+		901CD9682636EFF500E0710D /* SnackUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901CD9672636EFF500E0710D /* SnackUser.swift */; };
 		90259EBB263647C700AD8F10 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90259EBA263647C700AD8F10 /* Photos.swift */; };
 		90259EBE2636536F00AD8F10 /* SpotPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90259EBD2636536F00AD8F10 /* SpotPhotoCollectionViewCell.swift */; };
 		9028A5402624C0B70020B1EC /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9028A53F2624C0B70020B1EC /* ReviewTableViewController.swift */; };
@@ -49,6 +50,7 @@
 		9018DB5B2614C9580033DC1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9018DB5E2614C9580033DC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9018DB602614C9580033DC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		901CD9672636EFF500E0710D /* SnackUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackUser.swift; sourceTree = "<group>"; };
 		90259EBA263647C700AD8F10 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		90259EBD2636536F00AD8F10 /* SpotPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		9028A53F2624C0B70020B1EC /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				9028A5452624CDB20020B1EC /* Reviews.swift */,
 				90A314792635F5930045395B /* Photo.swift */,
 				90259EBA263647C700AD8F10 /* Photos.swift */,
+				901CD9672636EFF500E0710D /* SnackUser.swift */,
 				9018DB562614C9550033DC1E /* LoginViewController.swift */,
 				90A5C5DD2614F25700AC5A7C /* SpotListViewController.swift */,
 				90A5C5E02614F46900AC5A7C /* SpotTableViewCell.swift */,
@@ -295,6 +298,7 @@
 				9028A5492624D6F50020B1EC /* SpotReviewTableViewCell.swift in Sources */,
 				9018509E261971B200A35825 /* APIKeys.swift in Sources */,
 				9018509526190CD900A35825 /* Spot.swift in Sources */,
+				901CD9682636EFF500E0710D /* SnackUser.swift in Sources */,
 				90259EBE2636536F00AD8F10 /* SpotPhotoCollectionViewCell.swift in Sources */,
 				9018DB552614C9550033DC1E /* SceneDelegate.swift in Sources */,
 				9018509826191DE500A35825 /* UIViewController+alert.swift in Sources */,
